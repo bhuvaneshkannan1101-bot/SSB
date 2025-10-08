@@ -53,10 +53,36 @@ Model Waveform
 
 Program
 
+Am=4.7;
+Ac=9.4;
+Fm=364;
+Fc=3640;
+Fs=36400;
+t=0:1/Fs:2/Fm;
+m1=Am*cos(2*3.14*Fm*t);
+subplot(4,1,1);
+plot(t,m1);
+c1=Ac*cos(2*3.14*Fc*t);
+subplot(4,1,2);
+plot(t,c1);
+m2=Am*sin(2*3.14*Fm*t);
+c2=Ac*sin(2*3.14*Fc*t);
+s1=c1.*m1;
+s2=c2.*m2;
+slsb=s1+s2;
+subplot(4,1,3);
+plot(t,slsb);
+susb=s1-s2;
+subplot(4,1,4);
+plot(t,susb);
+
 OUTPUT WAVEFORM
+
+<img width="757" height="674" alt="image" src="https://github.com/user-attachments/assets/fab2996e-0470-4ada-9456-6ee677f8ea5e" />
 
 TABULATION
 
+![WhatsApp Image 2025-10-04 at 20 33 33_1a3fb5dc](https://github.com/user-attachments/assets/943cca42-1e2c-4fe2-8172-bfb231b6f7de)
 
 
 
